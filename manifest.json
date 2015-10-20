@@ -1,0 +1,6 @@
+{  
+  "name": "trivial Push",  
+  "short_name": "trivial push",  
+  "start_url": "/",  
+  "display": "standalone"
+}
