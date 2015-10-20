@@ -2,5 +2,6 @@
   "name": "trivial Push",  
   "short_name": "trivial push",  
   "start_url": "/",  
-  "display": "standalone"
+  "display": "standalone",
+  "gcm_sender_id": "YOUR_GOOGLE_DEVELOPERS_APP_ID"
 }
