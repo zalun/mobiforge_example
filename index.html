@@ -16,7 +16,7 @@ var sw_support=false;
 window.onload = function() {
   
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+    navigator.serviceWorker.register('./sw.js').then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ',    registration.scope);
 
@@ -60,7 +60,7 @@ function subscribePush() {
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     //Need to check notification permission?
     console.log('subscribing...');
-    serviceWorkerRegistration.pushManager.subscribe()
+    serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
       .then(function(pushSubscription) {
         console.log(pushSubscription);
         console.log(pushSubscription.subscriptionId);
