@@ -15,7 +15,7 @@ self.addEventListener('push', function(event) {
 
   //We wait for data fetch and notification promises
   event.waitUntil(
-    fetch("https://mobiforge.com/push/latest.json", fetchInit).then(function(res) {
+    fetch("https://trivial.zalewa.info/push/latest.json", fetchInit).then(function(res) {
       return res.json().then(function(notificationData) {
         // Show notification
         console.log(notificationData);
@@ -44,8 +44,7 @@ self.addEventListener('push', function(event) {
 
         if(Notification.permission=='granted') {
           return self.registration.showNotification(notificationData.data.title, {
-            body: notificationData.data.body,
-            icon: 'mf_logo.png'
+            body: notificationData.data.body
           });
 
         }
@@ -53,8 +52,7 @@ self.addEventListener('push', function(event) {
           Notification.requestPermission(function(permission) {
             if(permission=='granted') {
               return self.registration.showNotification(notificationData.data.title, {
-                body: notificationData.data.body,
-                icon: 'mf_logo.png'
+                body: notificationData.data.body
               });
             }
           });

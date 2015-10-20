@@ -110,24 +110,25 @@ function unsubscribePush() {
 }
 
 function sendSub(pushSubscription) {
-console.log(pushSubscription);
-//get endpoint
-const endPoint = pushSubscription.endpoint.slice(pushSubscription.endpoint.lastIndexOf('/')+1);
-console.log(endPoint);
+  console.log(pushSubscription);
+  //get endpoint
+  const endPoint = pushSubscription.endpoint.slice(pushSubscription.endpoint.lastIndexOf('/')+1);
+  console.log(endPoint);
+  console.log('Here we\'re registering to the subscription in the server (nothing really sent or received right now)');
   //fetch("https://mobiforge.com/push/subscribe.php?sid=yyy"+pushSubscription.endpoint+"&act=sub").then(function(res) {
- fetch("https://mobiforge.com/push/subscribe.php?sid="+endPoint+"&act=sub").then(function(res) {
-    res.json().then(function(data) {
-          // Show notification
-      console.log(data);
-          //self.registration.showNotification(data.title, {
-          //body: data.body,
-          //icon: data.icon,
-          //tag: data.tag
-        //})
-    }).catch(function(e) {
-        console.error('Error sending subscription to server:', e);
-      }); 
-  })
+  // fetch("https://mobiforge.com/push/subscribe.php?sid="+endPoint+"&act=sub").then(function(res) {
+  //   res.json().then(function(data) {
+  //         // Show notification
+  //     console.log(data);
+  //         //self.registration.showNotification(data.title, {
+  //         //body: data.body,
+  //         //icon: data.icon,
+  //         //tag: data.tag
+  //       //})
+  //   }).catch(function(e) {
+  //       console.error('Error sending subscription to server:', e);
+  //     }); 
+  // })
 }
 
 function checkSubscription() {
@@ -174,17 +175,18 @@ function disableNotifications() {
 
 function cancelSub(pushSubscription) {
   const endPoint = pushSubscription.endpoint.slice(pushSubscription.endpoint.lastIndexOf('/')+1);
-  fetch("https://mobiforge.com/push/subscribe.php?sid="+endPoint+"&act=unsub").then(function(res) {
-    res.json().then(function(data) {
-          // Show notification
-      console.log(data);
-          //self.registration.showNotification(data.title, {
-          //body: data.body,
-          //icon: data.icon,
-          //tag: data.tag
-        //})
-    })
-  })
+  console.log('unsubscribing the endpoint');
+  // fetch("https://mobiforge.com/push/subscribe.php?sid="+endPoint+"&act=unsub").then(function(res) {
+  //   res.json().then(function(data) {
+  //         // Show notification
+  //     console.log(data);
+  //         //self.registration.showNotification(data.title, {
+  //         //body: data.body,
+  //         //icon: data.icon,
+  //         //tag: data.tag
+  //       //})
+  //   })
+  // })
 }
 
 </script>
