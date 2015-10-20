@@ -3,5 +3,6 @@
   "short_name": "trivial push",  
   "start_url": "/",  
   "display": "standalone",
-  "gcm_sender_id": "YOUR_GOOGLE_DEVELOPERS_APP_ID"
+  "gcm_sender_id": "YOUR_GOOGLE_DEVELOPERS_APP_ID",  
+  "gcm_user_visible_only": true  
 }
